@@ -8,14 +8,14 @@ int ingresarOpcion(void);
 
 int main()
 {
-    float numero;
     float numeroA;
     float numeroB;
-    int suma;
-    int resta;
-    int multiplicacion;
+    float suma;
+    float resta;
+    float multiplicacion;
     float division;
-    int resultadoFactorial;
+    float factorialA;
+    float factorialB;
     int banderaA=0;
     int banderaB=0;
     int opcion;
@@ -33,7 +33,7 @@ int main()
         }
             if(banderaB==1)
             {
-                printf("\n2. Ingresar el segundo numero (B=%f)",numeroB);
+                printf("\n2. Ingresar el segundo numero (B=%.2f)",numeroB);
             }
             else
             {
@@ -42,29 +42,29 @@ int main()
 
         printf("\n3. Realizar los calculos");
         printf("\n4. Mostrar los resultados");
-        printf("\n5. Salir");
+        printf("\n5. Salir\n\n");
 
         opcion=ingresarOpcion();
         switch(opcion)
         {
             case 1:
                 banderaA=1;
-          //      ingresarNumero("%f", &numeroA);
+                ingresarNumero(&numeroA);
                 break;
 
             case 2:
                 banderaB=1;
-            //    ingresarNumero("%f", &numeroB);
+                ingresarNumero(&numeroB);
                 break;
 
             case 3:
                 if(banderaA==1 && banderaB==1)
                 {
-                    printf("\nCalculando la suma %.2f + %.2f ...",numeroA,numeroB);
-                    printf("\nCalculando la resta %.2f - %.2f ...",numeroA,numeroB);
-                    printf("\nCalculando la multiplicacion %.2f * %.2f ...",numeroA,numeroB);
-                    printf("\nCalculando la division %.2f / %.2f ...",numeroA,numeroB);
-                    printf("\nCalculando los factoriales de %.2f y %.2f ...",numeroA,numeroB);
+                    printf("\nCalculando la suma ...");
+                    printf("\nCalculando la resta ...");
+                    printf("\nCalculando la multiplicacion ...");
+                    printf("\nCalculando la division ...");
+                    printf("\nCalculando los factoriales ... \n\n");
                 }
                 else
                 {
@@ -74,19 +74,22 @@ int main()
 
             case 4:
                 suma=sumar(numeroA,numeroB);
-                printf("El resultado de la suma es %d\n", suma);
+                printf("El resultado de la suma es %.2f\n", suma);
 
                 resta=restar(numeroA,numeroB);
-                printf("El resultado de la resta es %d\n", resta);
+                printf("El resultado de la resta es %.2f\n", resta);
 
                 multiplicacion=multiplicar(numeroA,numeroB);
-                printf("El resultado de la multiplicacion es %d\n", multiplicacion);
+                printf("El resultado de la multiplicacion es %.2f\n", multiplicacion);
 
                 division=dividir(numeroA,numeroB);
-                printf("El resultado de la division es %f\n", division);
+                printf("El resultado de la division es %.2f\n", division);
 
-                mostrarFactorial();
+                mostrarFactorialA();
+
+                mostrarFactorialB();
                 break;
+
 
             case 5:
                 printf("Saliendo...\n");
@@ -112,85 +115,3 @@ int ingresarOpcion(void)
 
     return opcion;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- /*
-    int resultado;
-    int numeroA;
-    int numeroB;
-    int opcion;
-
-    do
-    {
-        printf("\n--CALCULADORA--");
-        printf("\n1.- Sumar");
-        printf("\n2.- Restar");
-        printf("\n3.- Multiplicar");
-        printf("\n4.- Dividir");
-        printf("\n5.- Salir");
-
-        printf("\n\nElegir una opcion: ");
-        scanf("%d",&opcion);
-
-        switch(opcion)
-        {
-            case 1: //SUMA
-                printf("\nIntroduce el primer numero: ");
-                scanf("%d",&numeroA);
-                printf("\nIntroduce el segundo numero: ");
-                scanf("%d",&numeroB);
-                resultado=numeroA + numeroB;
-                printf("\nLa suma es igual a: %d\n",numeroA,numeroB,resultado);
-                break;
-
-            case 2: //RESTA
-                printf("\nIntroduce el primer numero: ");
-                scanf("%d",&numeroA);
-                printf("\nIntroduce el segundo numero: ");
-                scanf("%d",&numeroB);
-                resultado=numeroA - numeroB;
-                printf("\nLa resta es igual a: %d\n",numeroA,numeroB,resultado);
-                break;
-
-            case 3: // MULTIPLICACION
-                printf("\nIntroduce el primer numero: ");
-                scanf("%d",&numeroA);
-                printf("\nIntroduce el segundo numero: ");
-                scanf("%d",&numeroB);
-                resultado=numeroA * numeroB;
-                printf("\nLa multiplicacion es igual a: %d\n",numeroA,numeroB,resultado);
-                break;
-
-            case 4: //DIVISION
-                printf("\nIntroduce el primer numero: ");
-                scanf("%d",&numeroA);
-                printf("\nIntroduce el segundo numero: ");
-                scanf("%d",&numeroB);
-                resultado=numeroA / numeroB;
-                printf("\nLa division es igual a: %d\n",numeroA,numeroB,resultado);
-                break;
-
-            case 5: //SALIR
-                break;
-        }
-
-    } while (opcion!=5);
-
-    return 0;
- */

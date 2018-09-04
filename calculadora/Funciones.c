@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include <math.h>
 
-/*void ingresarNumero(float* numero)
+void ingresarNumero(float* numeroA)
 {
    printf("\nIngrese un numero: ");
    fflush(stdin);
-   scanf("%f %f", &numeroA,&numeroB);
+   scanf("%f", numeroA);
 }
-*/
+
 int sumar(float numero1, float numero2)
 {
     float suma;
@@ -37,12 +37,30 @@ int dividir(float numero1, float numero2)
     return division;
 }
 
-int mostrarFactorial()
+int mostrarFactorialA()
 {
-    int i, numero,factorial=1;
+    int i;
+    long long int factorial = 1;
 
-    for(i=numero;i>=1;i--);
+    for(i;i>=1;i--)
     {
-        factorial *= i;
+       factorial= factorial * i;
     }
+    printf("El factorial del primer numero es: %lld\n\n",factorial);
+    return factorial;
+
+}
+
+int mostrarFactorialB()
+{
+    int i;
+    long long int factorial = 1;
+
+    for(i;i>=1;i--)
+    {
+       factorial= factorial * i;
+    }
+    printf("El factorial del segundo numero es: %lld\n\n",factorial);
+    return factorial;
+
 }

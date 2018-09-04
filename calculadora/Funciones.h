@@ -7,7 +7,8 @@ int sumar(float numero1, float numero2);
 int restar(float numero1, float numero2);
 int multiplicar(float numero1, float numero2);
 int dividir(float numero1, float numero2);
-int factorial(float numero);
+int mostrarFactorialA();
+int mostrarFactorialB();
 
 
 #endif // MATH_H_INCLUDED
