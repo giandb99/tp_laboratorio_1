@@ -1,28 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+#include <string.h>
 #include "Funciones.h"
 #include "Funciones.c"
-
-int ingresarOpcion(void);
 
 int main()
 {
     float numeroA;
     float numeroB;
-    float suma;
-    float resta;
-    float multiplicacion;
-    float division;
-    float factorialA;
-    float factorialB;
+    float resultado;
     int banderaA=0;
     int banderaB=0;
     int opcion;
 
     do
     {
-        printf("\n---CALCULADORA--\n\n");
+        printf("\n*************CALCULADORA*************\n\n");
+        printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
         if(banderaA==1)
         {
             printf("\n1. Ingresar el primer numero (A=%.2f)",numeroA);
@@ -43,6 +37,7 @@ int main()
         printf("\n3. Realizar los calculos");
         printf("\n4. Mostrar los resultados");
         printf("\n5. Salir\n\n");
+        printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
 
         opcion=ingresarOpcion();
         switch(opcion)
@@ -73,21 +68,40 @@ int main()
                 break;
 
             case 4:
-                suma=sumar(numeroA,numeroB);
-                printf("El resultado de la suma es %.2f\n", suma);
+                if(banderaA==1 && banderaB==1)
+                {
 
-                resta=restar(numeroA,numeroB);
-                printf("El resultado de la resta es %.2f\n", resta);
+                    resultado=sumar(numeroA,numeroB);
 
-                multiplicacion=multiplicar(numeroA,numeroB);
-                printf("El resultado de la multiplicacion es %.2f\n", multiplicacion);
+                    resultado=restar(numeroA,numeroB);
 
-                division=dividir(numeroA,numeroB);
-                printf("El resultado de la division es %.2f\n", division);
+                    resultado=multiplicar(numeroA,numeroB);
 
-                mostrarFactorialA();
+                    resultado=dividir(numeroA,numeroB);
 
-                mostrarFactorialB();
+                    if(numeroA<0)
+                    {
+                        printf("(Error %.2f) No se pueden factorizar los numeros negativos!!!\n",numeroA);
+                    }
+                    else
+                    {
+                        mostrarFactorial(numeroA);
+                    }
+
+                    if(numeroB<0)
+                    {
+                        printf("(Error %.2f) No se pueden factorizar los numeros negativos!!!\n",numeroB);
+                    }
+                    else
+                    {
+                        mostrarFactorial(numeroB);
+
+                    }
+                }
+                else
+                {
+                    printf("\nError!!! Aun no hiciste los calculos!!\n\n");
+                }
                 break;
 
 
@@ -96,7 +110,7 @@ int main()
                 break;
 
             default:
-                printf("Elija un numero del 1 al 5\n");
+                printf("Error. Ingrese una opcion valida (1-5): ");
         }
 
         system("pause"); //pausa la consola
@@ -111,7 +125,15 @@ int ingresarOpcion(void)
 {
     int opcion;
     printf("Ingrese una opcion: ");
+    fflush(stdin);
     scanf("%d",&opcion);
+
+    while(opcion <1 || opcion>5)
+    {
+        printf("Error. Ingrese una opcion valida (1-5): ");
+        fflush(stdin);
+        scanf("%d",&opcion);
+    }
 
     return opcion;
 }

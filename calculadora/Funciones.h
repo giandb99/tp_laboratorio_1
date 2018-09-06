@@ -1,14 +1,16 @@
-#ifndef MATH_H_INCLUDED
-#define MATH_H_INCLUDED
+#ifndef FUNCIONES_H_INCLUDED
+#define FUNCIONES_H_INCLUDED
 
-void pedirNumero(float *numero);
+int ingresarOpcion(void);
+
+void ingresarNumero(float* numeroA);
 
 int sumar(float numero1, float numero2);
 int restar(float numero1, float numero2);
 int multiplicar(float numero1, float numero2);
 int dividir(float numero1, float numero2);
-int mostrarFactorialA();
-int mostrarFactorialB();
+
+double mostrarFactorial(float numero1);
 
 
-#endif // MATH_H_INCLUDED
+#endif // FUNCIONES_H_INCLUDED
