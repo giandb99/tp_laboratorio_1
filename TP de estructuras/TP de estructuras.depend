@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1538449514 source:c:\utn\programacion y laboratorio\tp\tp de estructuras\funciones.c
+	"Funciones.h"
+	<stdio.h>
+	<string.h>
+
+1538449519 source:c:\utn\programacion y laboratorio\tp\tp de estructuras\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Funciones.h"
+
+1538449514 c:\utn\programacion y laboratorio\tp\tp de estructuras\funciones.h
+
