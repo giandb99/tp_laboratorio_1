@@ -1,3 +1,7 @@
+#ifndef FUNCIONES_H_INCLUDED
+#define FUNCIONES_H_INCLUDED
+#define EMPLEADOS 4
+
 typedef struct
 {
     int id;
@@ -9,18 +13,43 @@ typedef struct
 
 }eEmployee;
 
-int initEmployee(eEmployee listado[],int);
-int buscarLibre(eEmployee listado[],int);
-int siguienteId(eEmployee listado[],int);
-int buscarPorId(eEmployee listado[],int,int);
+//CARGO EL MENU
+int menu();
 
-int opcionA();
+//PIDO UNA OPCION
+int opcionF();
 
-void darDeAltaEmpleados(eEmployee listado[],int);
-int mostrarListadoDeEmpleados(eEmployee listado[],int);
-void ordenarPorNombre(eEmployee listado[],int);
-void modificarListadoDeEmpleados(eEmployee listado[],int);
+//PIDO UNA RESPUESTA
+char answerF();
 
+//PIDO EL ID
+int idF();
 
-void mostrarUnEmpleado(eEmployee);
-eEmployee cargarUnEmpleado();
+//TODA LA LISTA DE EMPLEADOS A -1
+void initEmployees(eEmployee[],int,int);
+
+//BUSCO UN LUGAR LIBRE EN LA LISTA
+int searchFree(eEmployee[],int,int);
+
+//AGREGO AL EMPLEADO
+int addEmployees(eEmployee[],int);
+
+//BUSCO AL EMPLEADO
+int findEmployeeById(eEmployee[],int,int);
+
+//DOY DE BAJA UN EMPLEADO
+int removeEmployee(eEmployee[],int,int);
+
+//ORDENO A LOS EMPLEADOS POR EL APELLIDO
+void sortEmployeeByLastName(eEmployee[],int);
+
+//ORDENO A LOS EMPLEADOS POR EL SECTOR
+void sortEmployeeBySector(eEmployee[],int);
+
+//IMPRIMO EL LISTADO DE LOS  EMPLEADOS
+void printEmployees(eEmployee[],int);
+
+//SACO LOS PROMEDIOS Y LOS MUESTRO
+void averages(eEmployee[],int);
+
+#endif // FUNCIONES_H_INCLUDED
